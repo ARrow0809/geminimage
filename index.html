@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品一覧</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .gallery-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item .info {
+            padding: 1rem;
+        }
+        .gallery-item h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .gallery-item p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #333;
+            color: white;
+        }
+        /* ライトボックス（画像プレビュー）のスタイル */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+            header {
+                padding: 1.5rem 0;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>作品一覧</h1>
+            <p>フォルダ内の画像作品をギャラリー形式で表示</p>
+            <div style="margin-top: 1rem;">
+                <a href="index.html" style="color: white; margin: 0 10px; text-decoration: underline;">基本ギャラリー</a>
+                <a href="gallery.html" style="color: white; margin: 0 10px; text-decoration: underline;">動的ギャラリー</a>
+                <a href="auto_gallery.html" style="color: white; margin: 0 10px; text-decoration: underline;">自動生成ギャラリー</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="generated_image.jpg" alt="作品1">
+                <div class="info">
+                    <h3>作品1</h3>
+                    <p>生成された画像作品</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="generated_image (1).jpg" alt="作品2">
+                <div class="info">
+                    <h3>作品2</h3>
+                    <p>生成された画像作品</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="generated_image (2).jpg" alt="作品3">
+                <div class="info">
+                    <h3>作品3</h3>
+                    <p>生成された画像作品</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="generated_image (3).jpg" alt="作品4">
+                <div class="info">
+                    <h3>作品4</h3>
+                    <p>生成された画像作品</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="generated_image (4).jpg" alt="作品5">
+                <div class="info">
+                    <h3>作品5</h3>
+                    <p>生成された画像作品</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="generated_image(4).jpg" alt="作品6">
+                <div class="info">
+                    <h3>作品6</h3>
+                    <p>生成された画像作品</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ダウンロード (1).jpeg" alt="作品7">
+                <div class="info">
+                    <h3>作品7</h3>
+                    <p>ダウンロードした画像作品</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="ダウンロード (2).jpeg" alt="作品8">
+                <div class="info">
+                    <h3>作品8</h3>
+                    <p>ダウンロードした画像作品</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ライトボックス（画像プレビュー）コンテナ -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="拡大画像">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 作品ギャラリー. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ライトボックス機能のためのJavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 画像要素を全て取得
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            // 各画像にクリックイベントを追加
+            galleryImages.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    // クリックされた画像のソースをライトボックスの画像に設定
+                    lightboxImg.src = this.src;
+                    // ライトボックスを表示
+                    lightbox.classList.add('active');
+                });
+            });
+
+            // ライトボックスを閉じる機能
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+            });
+
+            // 背景クリックでもライトボックスを閉じる
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
+            // ESCキーでライトボックスを閉じる
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    lightbox.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
